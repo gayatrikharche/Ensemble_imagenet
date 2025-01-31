@@ -4,16 +4,17 @@
 +SingularityImage = "osdf:///ospool/uc-shared/public/OSG-Staff/pytorch-2.1.1.sif"
 
 # Set the log, error, and output files with unique identifiers
-log = log/im.$(Cluster).log.txt
-error = error/im.$(Cluster).$(Process).err.txt
-output = output/im.$(Cluster).$(Process).out.txt
+log = log/im2.$(Cluster).log.txt
+error = error/im2.$(Cluster).$(Process).err.txt
+output = output/im2.$(Cluster).$(Process).out.txt
 
 # Set the executable to run
 executable = en.sh
 arguments = $(Process)
 
 # Transfer main script and data
-transfer_input_files = main3.py, osdf:///ospool/ap20/data/gayatri.kharche/subset1
+transfer_input_files = main3.py, osdf:///ospool/ap20/data/gayatri.kharche/Imagenet_subset01.tar
+transfer_output_files = subset_model2.pt
 
 # Specify file transfer options
 should_transfer_files = YES
@@ -26,10 +27,11 @@ require_gpus = (DriverVersion >= 10.1)
 request_cpus = 6
 request_gpus = 1
 request_memory = 20GB
-request_disk = 300GB
+request_disk = 100GB
 
 +JOB_Site = "$$(GLIDEIN_Site:Unknown)"
 
 # Queue the job for each submission
 queue 1
+
 
