@@ -5,8 +5,12 @@ pip install scipy
 
 # Create data directory and move the training data tar file
 mkdir -p data
-mv subset1 data/
+mv Imagenet_subset01.tar data/
 cd data
+
+# Extract the training data tar file
+tar -xvf Imagenet_subset01.tar
+rm -f Imagenet_subset01.tar
 
 # Extract individual class tar files (suppress output)
 find . -name "*.tar" | while read NAME ; do
