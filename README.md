@@ -45,5 +45,14 @@ To execute the experiment, run the following command in the current directory:
 condor_submit en.sub
 ```
 
+### 6. Validate the Models  
+After generating all five `.pt` model files, run the validation process to evaluate accuracy on the validation set. To do this, execute:  
+
+```bash
+condor_submit en_val.sub
+```
+
+This will take all the .pt model files as input and compute their accuracy. The ensemble prediction method improves classification accuracy by averaging predictions from multiple models, reducing variance and model-specific biases.
+
 ---
 
