@@ -38,7 +38,12 @@ Change `"subset_model2.pt"` to match the subset number (e.g., `subset_model01.pt
 ### 4. Run for All Subsets  
 Repeat the process for `Imagenet_subset01.tar` to `Imagenet_subset05.tar` to save models for all subsets.
 
+### 5. Run the Code  
+To execute the experiment, run the following command in the current directory:  
+
+```bash
+condor_submit en.sub
+```
+
 ---
-
-
 
